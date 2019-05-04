@@ -1,4 +1,5 @@
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /// this is so that all the game objects will have access to the methods here.
 public abstract class GameObject {
@@ -78,5 +79,7 @@ public abstract class GameObject {
 	
 	public abstract void tick();
 	public abstract void render(Graphics g);
+	
+	public abstract Rectangle collide();
 
 }
