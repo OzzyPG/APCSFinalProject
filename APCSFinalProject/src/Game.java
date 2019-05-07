@@ -1,5 +1,6 @@
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
@@ -37,11 +38,7 @@ public class Game extends Canvas implements Runnable{
 		score = new Score(); // initialized score
 		this.addKeyListener(new GameListeners(handler)); // allows the program to read key inputs
 		
-		handler.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false)); // creates the player
-		
-		for (int i = 0; i <= 25; i++) {
-			handler.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
-		}
+		handler.load();
 		
 
 		
@@ -152,7 +149,7 @@ public class Game extends Canvas implements Runnable{
 		}
 		
 		else {
-		g.setColor(Color.black);
+		g.setColor(Color.pink);
 		g.fillRect(0, 0, w, h);
 		g.dispose();
 		

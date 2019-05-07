@@ -51,6 +51,21 @@ public class Handler {
 		}
 	}
 	
+	public void restart() {
+		this.objects.clear();
+	}
+	
+	public void load() {
+		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false)); // creates the player
+			
+		for (int i = 0; i <= 25; i++) {
+			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
+		}
+		
+		this.finalScore = 0;
+		Score.score = 0;
+	}
+	
 	public void render(Graphics g) {
 		for (int i = 0; i < objects.size(); i++) {
 			GameObject temp = objects.get(i);

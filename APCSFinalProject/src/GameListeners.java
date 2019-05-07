@@ -30,6 +30,13 @@ public class GameListeners extends KeyAdapter {
 					p.setSpeedX(6);
 
 				}
+				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+					
+					handler.restart();
+					handler.state = true;
+					handler.load();
+				}
+				
 				
 			}
 		}	
