@@ -51,10 +51,20 @@ public class Handler {
 		}
 	}
 	
+	/*
+	 * restart method
+	 * clears all objects
+	 * (Minh Truong)
+	 */
 	public void restart() {
 		this.objects.clear();
 	}
 	
+	/*
+	 * load method
+	 * creates the objects
+	 * (Minh Truong)
+	 */
 	public void load() {
 		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false)); // creates the player
 			
@@ -65,6 +75,7 @@ public class Handler {
 		this.finalScore = 0;
 		Score.score = 0;
 	}
+	
 	
 	public void render(Graphics g) {
 		for (int i = 0; i < objects.size(); i++) {
