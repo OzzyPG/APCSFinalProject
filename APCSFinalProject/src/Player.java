@@ -1,6 +1,6 @@
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.Color;//imports java color from Abstract Window Toolkit (Minh Troung)
+import java.awt.Graphics;//imports java graphics from Abstract Window Toolkit (Minh Troung)
+import java.awt.Rectangle;//imports java rectangle from Abstract Window Toolkit (Minh Troung)
 
 public class Player extends GameObject {
 
