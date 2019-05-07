@@ -1,13 +1,12 @@
-import java.awt.Canvas;
-import java.awt.Dimension;
+import java.awt.Canvas;//imports java canvas from Abstract Window Toolkit (Sameer Nasir)
+import java.awt.Dimension;//imports java dimension from Abstract Window Toolkit (Sameer Nasir)
+import javax.swing.JFrame;//imports java (Sameer Nasir)
 
-import javax.swing.JFrame;
-
-public class Window extends Canvas {
+public class Window extends Canvas {//creates a public class Window that extends Canvas (Sameer Nasir)
 
 	/**
 	 *  This class was coded by Nathaniel Miller-Robbins. All It does it creates our window.
-	 */
+	 **/
 	private static final long serialVersionUID = 1L;
 	
 	public Window(int w, int h, String name, Game game) {
