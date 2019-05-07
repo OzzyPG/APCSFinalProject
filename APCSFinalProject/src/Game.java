@@ -158,14 +158,30 @@ public class Game extends Canvas implements Runnable{
 		
 		Graphics g1 = bs.getDrawGraphics();
 
-		g1.drawString("Score " + handler.finalScore, 350, 215);
+		
+		
 		g1.setColor(Color.white);
+		g1.setFont(new Font("arial",Font.BOLD,20));
+		g1.drawString("Score " + handler.finalScore, 350, 215);
 		g1.dispose();
 		
 		Graphics g2 = bs.getDrawGraphics();
-		g2.drawString("Game Over", 350, 200);
+		
+		
 		g2.setColor(Color.white);
+		g2.setFont(new Font("arial",Font.BOLD,20));
+		
+		g2.drawString("Game Over", 350, 190);
 		g2.dispose();
+		
+		
+		Graphics g3 = bs.getDrawGraphics();
+		
+		g3.setColor(Color.white);
+		g3.setFont(new Font("arial",Font.BOLD,20));
+	
+		g3.drawString("Press Space to restart", 320, 250);
+		g3.dispose();
 		bs.show();
 			
 		}
