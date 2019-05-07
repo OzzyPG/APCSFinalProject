@@ -13,17 +13,17 @@ public class Game extends Canvas implements Runnable{
 	
 	
 	/// Variables for the Window Creation Method
-	public int w = 800;
-	public int h = 600;
+	public int w = 800; // width
+	public int h = 600; // height
 	public String name = "APCS Final Project";
 	
 	
 	
 	// Thread + running boolean
-	private boolean isRunning = false;
+	public static boolean isRunning = false;
 	private Thread thread;
 	
-	
+	// score
 	private Score score;
 	
 	// handler
@@ -32,15 +32,15 @@ public class Game extends Canvas implements Runnable{
 	
 	//Starts everything required for 
 	public Game() {
-		handler = new Handler();
-		new Window(w, h, name, this);
-		score = new Score();
-		this.addKeyListener(new GameListeners(handler));
+		handler = new Handler(); // initialized handler
+		new Window(w, h, name, this); // creates the main game windoe
+		score = new Score(); // initialized score
+		this.addKeyListener(new GameListeners(handler)); // allows the program to read key inputs
 		
-		handler.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false));
+		handler.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false)); // creates the player
 		
 		for (int i = 0; i <= 25; i++) {
-			handler.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true));
+			handler.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
 		}
 		
 
@@ -57,6 +57,7 @@ public class Game extends Canvas implements Runnable{
 		
 	}
 	
+	//stops the thread if possible, does nothing if impossible. 
 	public void stop() {
 		try {
 			thread.join();
@@ -67,8 +68,12 @@ public class Game extends Canvas implements Runnable{
 			
 		}
  	}
+	
+	
+	
+	
 
-
+	// starts the process of starting
 	public static void main(String[] args) {
 		new Game();		
 	}
@@ -77,17 +82,17 @@ public class Game extends Canvas implements Runnable{
 	
 	
 	//The Following code is not my own, It is a publicly available game loop. The tick() and render() methods are partially mine. - nathaniel
-
+	// inline comments are mine
 
 	public void run() {
-		this.requestFocus();
+		this.requestFocus(); // makes it so you dont have to click to move
 		 {
-		        long lastTime = System.nanoTime();
-		        double amountOfTicks = 60.0;
-		        double ns = 1000000000 / amountOfTicks;
-		        double delta = 0;
-		        long timer = System.currentTimeMillis();
-		        int frames = 0;
+		        long lastTime = System.nanoTime(); // stores a time
+		        double amountOfTicks = 60.0; // ticks per second
+		        double ns = 1000000000 / amountOfTicks; // ticks per nanosecond
+		        double delta = 0; // delta
+		        long timer = System.currentTimeMillis(); // current time in milliseconds
+		        int frames = 0; // frames
 		        while(isRunning)
 		        {
 		        	
