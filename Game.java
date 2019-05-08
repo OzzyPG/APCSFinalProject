@@ -1,5 +1,6 @@
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
@@ -25,6 +26,7 @@ public class Game extends Canvas implements Runnable{
 	
 	// score
 	private Score score;
+	public static boolean startScr =  true;
 	
 	// handler
 	private Handler handler;
@@ -34,14 +36,10 @@ public class Game extends Canvas implements Runnable{
 	public Game() {
 		handler = new Handler(); // initialized handler
 		new Window(w, h, name, this); // creates the main game windoe
-		score = new Score(); // initialized score
+		score = new Score(handler); // initialized score
 		this.addKeyListener(new GameListeners(handler)); // allows the program to read key inputs
 		
-		handler.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false)); // creates the player
-		
-		for (int i = 0; i <= 25; i++) {
-			handler.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
-		}
+		handler.load();
 		
 
 		
@@ -138,7 +136,29 @@ public class Game extends Canvas implements Runnable{
 		
 		Graphics g = bs.getDrawGraphics();
 		
-		if (handler.getState() != false) {
+		if (startScr) {
+			Graphics g4 = bs.getDrawGraphics();
+			g4.setColor(Color.pink);
+			g4.fillRect(0, 0, w, h);
+			
+			
+			g4.setColor(Color.white);
+			g4.setFont(new Font("arial",Font.BOLD,20));
+		
+			g4.drawString("Press Space to start", 300, 250);
+			
+			g4.drawString("Use Arrow Keys to move", 300, 290);
+
+			
+			g4.dispose();
+			bs.show();
+				
+			
+			
+
+		}
+		
+		else if (handler.getState() != false) {
 		
 		
 		
@@ -152,20 +172,21 @@ public class Game extends Canvas implements Runnable{
 		}
 		
 		else {
-		g.setColor(Color.black);
+		g.setColor(Color.pink);
 		g.fillRect(0, 0, w, h);
 		g.dispose();
 		
 		Graphics g1 = bs.getDrawGraphics();
 
-		g1.drawString("Score " + handler.finalScore, 350, 215);
-		g1.setColor(Color.white);
-		g1.dispose();
 		
-		Graphics g2 = bs.getDrawGraphics();
-		g2.drawString("Game Over", 350, 200);
-		g2.setColor(Color.white);
-		g2.dispose();
+		
+		g1.setColor(Color.white);
+		g1.setFont(new Font("arial",Font.BOLD,20));
+		g1.drawString("Score " + handler.finalScore, 345, 215);
+     	g1.drawString("Game Over", 345, 190);
+		g1.drawString("Press Space to restart", 300, 260);
+		g1.drawString("Press Escape to Exit", 300, 300);
+		g1.dispose();
 		bs.show();
 			
 		}
