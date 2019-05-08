@@ -76,6 +76,12 @@ public class Handler {
 		Score.score = 0;
 	}
 	
+	public void wave(int f) {
+		for (int i = 0; i <= f; i++) {
+			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
+		}
+	}
+	
 	
 	public void render(Graphics g) {
 		for (int i = 0; i < objects.size(); i++) {

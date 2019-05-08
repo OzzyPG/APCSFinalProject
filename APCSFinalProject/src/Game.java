@@ -26,6 +26,7 @@ public class Game extends Canvas implements Runnable{
 	
 	// score
 	private Score score;
+	public static boolean startScr =  true;
 	
 	// handler
 	private Handler handler;
@@ -35,7 +36,7 @@ public class Game extends Canvas implements Runnable{
 	public Game() {
 		handler = new Handler(); // initialized handler
 		new Window(w, h, name, this); // creates the main game windoe
-		score = new Score(); // initialized score
+		score = new Score(handler); // initialized score
 		this.addKeyListener(new GameListeners(handler)); // allows the program to read key inputs
 		
 		handler.load();
@@ -135,7 +136,29 @@ public class Game extends Canvas implements Runnable{
 		
 		Graphics g = bs.getDrawGraphics();
 		
-		if (handler.getState() != false) {
+		if (startScr) {
+			Graphics g4 = bs.getDrawGraphics();
+			g4.setColor(Color.pink);
+			g4.fillRect(0, 0, w, h);
+			
+			
+			g4.setColor(Color.white);
+			g4.setFont(new Font("arial",Font.BOLD,20));
+		
+			g4.drawString("Press Space to start", 300, 250);
+			
+			g4.drawString("Use Arrow Keys to move", 300, 290);
+
+			
+			g4.dispose();
+			bs.show();
+				
+			
+			
+
+		}
+		
+		else if (handler.getState() != false) {
 		
 		
 		
@@ -159,26 +182,11 @@ public class Game extends Canvas implements Runnable{
 		
 		g1.setColor(Color.white);
 		g1.setFont(new Font("arial",Font.BOLD,20));
-		g1.drawString("Score " + handler.finalScore, 350, 215);
+		g1.drawString("Score " + handler.finalScore, 345, 215);
+     	g1.drawString("Game Over", 345, 190);
+		g1.drawString("Press Space to restart", 300, 260);
+		g1.drawString("Press Escape to Exit", 300, 300);
 		g1.dispose();
-		
-		Graphics g2 = bs.getDrawGraphics();
-		
-		
-		g2.setColor(Color.white);
-		g2.setFont(new Font("arial",Font.BOLD,20));
-		
-		g2.drawString("Game Over", 350, 190);
-		g2.dispose();
-		
-		
-		Graphics g3 = bs.getDrawGraphics();
-		
-		g3.setColor(Color.white);
-		g3.setFont(new Font("arial",Font.BOLD,20));
-	
-		g3.drawString("Press Space to restart", 320, 250);
-		g3.dispose();
 		bs.show();
 			
 		}

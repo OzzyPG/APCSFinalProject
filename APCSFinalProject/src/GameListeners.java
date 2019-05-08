@@ -41,6 +41,12 @@ public class GameListeners extends KeyAdapter {
 					handler.restart();
 					handler.state = true;
 					handler.load();
+					if (Game.startScr == true) {
+						Game.startScr = false;
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+					System.exit(1);
 				}
 				
 				
