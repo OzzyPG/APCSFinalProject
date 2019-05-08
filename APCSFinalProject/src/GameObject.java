@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;//imports java graphics from Abstract Window Toolkit (Sameer Nasir)
 import java.awt.Rectangle;//imports java rectangle from Abstract Window Toolkit (Sameer Nasir)
 
@@ -13,14 +14,18 @@ public abstract class GameObject {
 	//velocity (Sameer Nasir)
 	protected int speedX;//both enemies and players horizontal speed (Sameer Nasir)
 	protected int speedY;//both enemies and players vertical speed (Sameer Nasir)
+	Color color;
 	
 	// differencates from the player (Sameer Nasir)
 	protected boolean isEnemy;//boolean for identifying objects (Sameer Nasir)
+	protected int player;
 	
-	public GameObject(int x, int y, boolean isEnemy) {//any game objects x value, y value, and if they are an enemy or not (Sameer Nasir)
+	public GameObject(int x, int y, boolean isEnemy, int player, Color color) {//any game objects x value, y value, and if they are an enemy or not (Sameer Nasir)
 		this.x = x;//the x value is set to x (Sameer Nasir)
 		this.y = y;//the y value is set to y (Sameer Nasir)
 		this.isEnemy = isEnemy;//the isEnemy is set to new one (Sameer Nasir)
+		this.player = player;
+		this.color = color;
 	}
 	
 	
@@ -61,6 +66,9 @@ public abstract class GameObject {
 	}
 	public int getspeedX() {//gets the horizontal speed (Sameer Nasir)
 		return speedX;//returns the horizontal speed (Sameer Nasir)
+	}
+	public int getPlayer() {
+		return player;
 	}
 
 	// Tick and render for game loops (Sameer Nasir)

@@ -19,7 +19,9 @@ public class GameListeners extends KeyAdapter {
 	public void keyPressed(KeyEvent e) {
 		for (int i = 0; i < handler.objects.size(); i++) {
 			if (handler.objects.get(i).getIsEnemy() == false) {
-				GameObject p = handler.objects.get(i);
+				if (handler.objects.get(i).getPlayer() == 1) {
+					GameObject p = handler.objects.get(i);
+
 				if (e.getKeyCode() == KeyEvent.VK_UP) {	//up arrow makes the object go up
 				p.setSpeedY(-6);
 					
@@ -51,6 +53,31 @@ public class GameListeners extends KeyAdapter {
 				
 				
 			}
+			
+			else if (handler.objects.get(i).getPlayer() == 2) {
+					GameObject p = handler.objects.get(i);
+
+				if (e.getKeyCode() == KeyEvent.VK_W) {	//w makes the object go up
+					p.setSpeedY(-6);
+						
+					}
+					if (e.getKeyCode() == KeyEvent.VK_S) {	//s makes the object go down
+						p.setSpeedY(6);
+						
+					}
+					if (e.getKeyCode() == KeyEvent.VK_A) {	//a makes object go left
+						p.setSpeedX(-6);
+				
+					}
+					if (e.getKeyCode() == KeyEvent.VK_D) {	//d makes object go right
+						p.setSpeedX(6);
+
+					}
+			}
+					
+	
+				
+			}
 		}	
 		}
 	
@@ -63,6 +90,7 @@ public class GameListeners extends KeyAdapter {
 	public void keyReleased(KeyEvent e) {
 		for (int i = 0; i < handler.objects.size(); i++) {
 			if (handler.objects.get(i).getIsEnemy() == false) {
+				if (handler.objects.get(i).getPlayer() == 1) {
 				GameObject p = handler.objects.get(i);
 				//sets the x and y positions back to 0
 				if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -82,6 +110,28 @@ public class GameListeners extends KeyAdapter {
 
 				}
 				
+			}
+		
+			else if (handler.objects.get(i).getPlayer() == 2) {
+				GameObject p = handler.objects.get(i);
+
+			if (e.getKeyCode() == KeyEvent.VK_W) {	//w makes the object go up
+				p.setSpeedY(0);
+					
+				}
+				if (e.getKeyCode() == KeyEvent.VK_S) {	//s makes the object go down
+					p.setSpeedY(0);
+					
+				}
+				if (e.getKeyCode() == KeyEvent.VK_A) {	//a makes object go left
+					p.setSpeedX(0);
+			
+				}
+				if (e.getKeyCode() == KeyEvent.VK_D) {	//d makes object go right
+					p.setSpeedX(0);
+
+				}
+		}
 			}
 		}	
 		

@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
@@ -66,10 +67,12 @@ public class Handler {
 	 * (Minh Truong)
 	 */
 	public void load() {
-		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false)); // creates the player
+		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, 1, Color.cyan)); // creates the player
+		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, 2, Color.BLUE)); // creates the player
+
 			
 		for (int i = 0; i <= 25; i++) {
-			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
+			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true, 0, Color.red)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
 		}
 		
 		this.finalScore = 0;
@@ -78,7 +81,7 @@ public class Handler {
 	
 	public void wave(int f) {
 		for (int i = 0; i <= f; i++) {
-			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
+			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (599 - 1)), true, 0, Color.red)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
 		}
 	}
 	

@@ -4,8 +4,8 @@ import java.awt.Rectangle;//imports java rectangle from Abstract Window Toolkit 
 
 public class Enemy extends GameObject{//creates a public class that makes the subclass extended into the inheritance(Sameer Nasir)
 
-	public Enemy(int x, int y, boolean isEnemy) {//public enemy uses int x, int y, and boolen isEnemy to find corrdinates (Sameer Nasir)
-		super(x, y, isEnemy);//super uses the x, y, and isEnemy (Sameer Nasir)
+	public Enemy(int x, int y, boolean isEnemy, int player, Color color) {//public enemy uses int x, int y, and boolen isEnemy to find corrdinates (Sameer Nasir)
+		super(x, y, isEnemy, player, color);//super uses the x, y, and isEnemy (Sameer Nasir)
 		speedX = 5;//how fast the enemy travels per tick on the x-axis (Sameer Nasir)
 	}
 

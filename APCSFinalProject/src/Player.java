@@ -4,8 +4,8 @@ import java.awt.Rectangle;//imports java rectangle from Abstract Window Toolkit 
 
 public class Player extends GameObject {//public class Player extends the GameObject (Minh Troung)
 
-	public Player(int x, int y, boolean isEnemy) {//the player class that has the x and y coordinates and whether they are an enemy (Minh Troung)
-		super(x, y, isEnemy);//the updated x and y coordinates and if they are an enemy (Minh Troung)
+	public Player(int x, int y, boolean isEnemy, int i, Color color) {//the player class that has the x and y coordinates and whether they are an enemy (Minh Troung)
+		super(x, y, isEnemy, i, color);//the updated x and y coordinates and if they are an enemy (Minh Troung)
 	}
 
 	@Override
@@ -24,9 +24,8 @@ public class Player extends GameObject {//public class Player extends the GameOb
 		return new Rectangle(x, y, 10, 10);//returns a new rectangle for the play (Minh Troung)
 	}
 
-	@Override
 	public void render(Graphics g) {//renders the player  (Minh Troung)
-		g.setColor(Color.blue);//the play is set to the color blue (Minh Troung)
+		g.setColor(color);//the play is set to the color blue (Minh Troung)
 		g.fillRect(x, y, 10, 10);//the rectangle is filled with the color blue (Minh Troung)
 		
 	}

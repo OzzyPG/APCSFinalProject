@@ -23,6 +23,7 @@ public class Game extends Canvas implements Runnable{
 	// Thread + running boolean
 	public static boolean isRunning = false;
 	private Thread thread;
+	private Thread thread2;
 	
 	// score
 	private Score score;
@@ -51,6 +52,8 @@ public class Game extends Canvas implements Runnable{
 	public void start() {
 		thread = new Thread(this);
 		thread.start();
+		thread2 = new Thread(this);
+		thread2.start();
 		isRunning = true;
 		
 	}
@@ -59,6 +62,7 @@ public class Game extends Canvas implements Runnable{
 	public void stop() {
 		try {
 			thread.join();
+			thread2.join();
 			isRunning = false;
 			
 		}
