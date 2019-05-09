@@ -20,6 +20,11 @@ public class Game extends Canvas implements Runnable{
 	
 	
 	
+	
+	public static int players;
+	
+	
+	
 	// Thread + running boolean
 	public static boolean isRunning = false;
 	private Thread thread;
@@ -125,6 +130,9 @@ public class Game extends Canvas implements Runnable{
 		handler.tick();
 		handler.collision();
 	    score.tick();
+	    if (handler.getState() == true) {
+	    handler.dead();
+	    }
 	}
 	
 	

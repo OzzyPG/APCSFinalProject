@@ -9,9 +9,9 @@ public class Handler {
 	private Game game;
 	
 	
+	int req = 0;
 	
-	
-	
+	ArrayList<Color> colors = new ArrayList<Color>();	
 	
 	//updates and renders every game object, every tick.
 	ArrayList<GameObject> objects = new ArrayList<GameObject>();
@@ -23,6 +23,24 @@ public class Handler {
 			GameObject temp = objects.get(i);
 
 			temp.tick();
+		}
+	}
+	
+	
+	public void dead() {
+		int players = -1;
+
+		for (int i = 0; i < objects.size(); i++) {
+			GameObject temp = objects.get(i);
+			
+			if (temp.isEnemy == false) {
+				players++;
+			}
+		}
+		if (players == -1) {
+			state = false;
+			finalScore = Score.score;
+			return;
 		}
 	}
 	
@@ -39,9 +57,8 @@ public class Handler {
 					
 					if (temp1.isEnemy == true) {
 						if (temp1.collide().intersects(p.collide())) {
-							state = false;
-							finalScore = Score.score;
-							return;
+							p.setIsAlive(false);
+							 objects.remove(p);
 						}
 					}
 
@@ -67,7 +84,17 @@ public class Handler {
 	 * (Minh Truong)
 	 */
 	public void load() {
-		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, 1, Color.cyan)); // creates the player
+		colors.clear();
+		colors.add(Color.cyan);
+		colors.add(Color.blue);
+		colors.add(Color.magenta);
+		colors.add(Color.yellow);
+
+
+		for (int c = 1; c<= Game.players; c++) {
+		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, c, colors.get(c - 1), true)); // creates the player
+
+		}
 		//this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, 2, Color.BLUE)); // creates the player
 
 			

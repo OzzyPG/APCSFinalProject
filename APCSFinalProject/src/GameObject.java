@@ -9,6 +9,7 @@ public abstract class GameObject {
 	// location (Sameer Nasir)
 	protected int x;//both enemies and players x-coordinate (Sameer Nasir)
 	protected int y;//both enemies and players y-coordinate (Sameer Nasir)
+	protected boolean isAlive;
 	
 	
 	//velocity (Sameer Nasir)
@@ -59,6 +60,13 @@ public abstract class GameObject {
 	public void setSpeedY(int y) {//sets the vertical speed (Sameer Nasir)
 		this.speedY = y;//sets the speedY to y (Sameer Nasir)
 	 
+	}
+	
+	public void setIsAlive(boolean isAlive){
+		this.isAlive = isAlive;
+	}
+	public boolean getIsAlive(){
+		return this.isAlive;
 	}
 	public int getspeedY() {//gets the vertical speed (Sameer Nasir)
 		return speedY;//returns the vertical speed (Sameer Nasir)
