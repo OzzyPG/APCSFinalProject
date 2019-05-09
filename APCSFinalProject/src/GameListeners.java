@@ -10,6 +10,8 @@ public class GameListeners extends KeyAdapter {
 		this.handler = handler;
 	}
 	
+	int vel = 6;
+	
 	/*
 	 * keyPressed method
 	 * takes in user input
@@ -23,19 +25,19 @@ public class GameListeners extends KeyAdapter {
 					GameObject p = handler.objects.get(i);
 
 				if (e.getKeyCode() == KeyEvent.VK_UP) {	//up arrow makes the object go up
-				p.setSpeedY(-6);
+				p.setSpeedY(-vel);
 					
 				}
 				if (e.getKeyCode() == KeyEvent.VK_DOWN) {	//down arrow makes the object go down
-					p.setSpeedY(6);
+					p.setSpeedY(vel);
 					
 				}
 				if (e.getKeyCode() == KeyEvent.VK_LEFT) {	//left arrow makes object go left
-					p.setSpeedX(-6);
+					p.setSpeedX(-vel);
 			
 				}
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {	//right arrow makes object go right
-					p.setSpeedX(6);
+					p.setSpeedX(vel);
 
 				}
 				if (e.getKeyCode() == KeyEvent.VK_SPACE) {	//space bar restarts the game
@@ -50,6 +52,9 @@ public class GameListeners extends KeyAdapter {
 				if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 					System.exit(1);
 				}
+				if (e.getKeyCode() == KeyEvent.VK_C) {
+					vel = 3;
+				}
 				
 				
 			}
@@ -58,19 +63,19 @@ public class GameListeners extends KeyAdapter {
 					GameObject p = handler.objects.get(i);
 
 				if (e.getKeyCode() == KeyEvent.VK_W) {	//w makes the object go up
-					p.setSpeedY(-6);
+					p.setSpeedY(-vel);
 						
 					}
 					if (e.getKeyCode() == KeyEvent.VK_S) {	//s makes the object go down
-						p.setSpeedY(6);
+						p.setSpeedY(vel);
 						
 					}
 					if (e.getKeyCode() == KeyEvent.VK_A) {	//a makes object go left
-						p.setSpeedX(-6);
+						p.setSpeedX(-vel);
 				
 					}
 					if (e.getKeyCode() == KeyEvent.VK_D) {	//d makes object go right
-						p.setSpeedX(6);
+						p.setSpeedX(vel);
 
 					}
 			}
@@ -108,6 +113,9 @@ public class GameListeners extends KeyAdapter {
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {	
 					p.setSpeedX(0);
 
+				}
+				if (e.getKeyCode() == KeyEvent.VK_C) {
+					vel = 6;
 				}
 				
 			}

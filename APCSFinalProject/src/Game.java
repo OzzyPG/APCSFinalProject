@@ -52,8 +52,6 @@ public class Game extends Canvas implements Runnable{
 	public void start() {
 		thread = new Thread(this);
 		thread.start();
-		thread2 = new Thread(this);
-		thread2.start();
 		isRunning = true;
 		
 	}
@@ -62,7 +60,6 @@ public class Game extends Canvas implements Runnable{
 	public void stop() {
 		try {
 			thread.join();
-			thread2.join();
 			isRunning = false;
 			
 		}
@@ -115,7 +112,7 @@ public class Game extends Canvas implements Runnable{
 		                            if(System.currentTimeMillis() - timer > 1000)
 		                            {
 		                                timer += 1000;
-		                                //System.out.println("FPS: "+ frames);
+		                                System.out.println("FPS: "+ frames);
 		                                frames = 0;
 		                            }
 		        }
