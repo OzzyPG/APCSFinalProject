@@ -16,7 +16,7 @@ public class Game extends Canvas implements Runnable{
 	/// Variables for the Window Creation Method
 	public int w = 800; // width
 	public int h = 600; // height
-	public String name = "APCS Final Project";
+	public String name = "Got To Go Fast";
 	
 	
 	
@@ -28,7 +28,7 @@ public class Game extends Canvas implements Runnable{
 	// Thread + running boolean
 	public static boolean isRunning = false;
 	private Thread thread;
-	private Thread thread2;
+	
 	
 	// score
 	private Score score;
@@ -154,9 +154,17 @@ public class Game extends Canvas implements Runnable{
 			g4.setColor(Color.white);
 			g4.setFont(new Font("arial",Font.BOLD,20));
 		
-			g4.drawString("Press Space to start", 300, 250);
+			g4.drawString("Press a number 1-8 for the number of players", 150, 200);
 			
-			g4.drawString("Use Arrow Keys to move", 300, 290);
+                        g4.setFont(new Font("Georgia", Font.BOLD, 20));
+			g4.drawString("1: Cyan: Use Arrow Keys to move", 150, 230);
+                        g4.drawString("2: Blue: Use WASD Keys to move", 150, 260);
+                        g4.drawString("3: Magenta: Use NUMPAD 5 2 1 3 Keys to move", 150, 290);
+                        g4.drawString("4: Yellow: Use I J K L to move", 150, 320);
+                        g4.drawString("5: Black: Use T F G H to move", 150, 350);
+                        g4.drawString("6: Green: Use HOME DELETE END PAGEDOWN to move", 150, 380);
+                        g4.drawString("7: Orange: Use Zero O P LEFT BRACKET to move", 150, 410);
+                        g4.drawString("8: White: Use NUMPAD DIVIDE 7 8 9 to move", 150, 440);
 
 			
 			g4.dispose();
@@ -169,9 +177,7 @@ public class Game extends Canvas implements Runnable{
 		
 		else if (handler.getState() != false) {
 		
-		
-		
-		
+
 		g.setColor(Color.pink);
 		g.fillRect(0, 0, w, h);
 		handler.render(g);
@@ -191,10 +197,24 @@ public class Game extends Canvas implements Runnable{
 		
 		g1.setColor(Color.white);
 		g1.setFont(new Font("arial",Font.BOLD,20));
-		g1.drawString("Score " + handler.finalScore, 345, 215);
-     	g1.drawString("Game Over", 345, 190);
-		g1.drawString("Press Space to restart", 300, 260);
-		g1.drawString("Press Escape to Exit", 300, 300);
+                
+                g1.drawString("Game Over", 150, 120);
+		g1.drawString("Score " + handler.finalScore, 150, 155);
+     	
+                g1.setFont(new Font("Georgia", Font.BOLD, 20));
+                g1.drawString("Press a number 1-8 for the number of players", 150, 200);
+
+                g1.drawString("1: Cyan: Use Arrow Keys to move", 150, 230);
+                g1.drawString("2: Blue: Use WASD Keys to move", 150, 260);
+                g1.drawString("3: Magenta: Use NUMPAD 5 1 2 3 Keys to move", 150, 290);
+                g1.drawString("4: Yellow: Use I J K L to move", 150, 320);
+                g1.drawString("5: Black: Use T F G H to move", 150, 350);
+                g1.drawString("6: Green: Use HOME DELETE END PAGEDOWN to move", 150, 380);
+                g1.drawString("7: Orange: Use Zero O P LEFT BRACKET to move", 150, 410);
+                g1.drawString("8: White: Use NUMPAD DIVIDE 7 8 9 to move", 150, 440);
+                
+                g1.setFont(new Font("arial",Font.BOLD,20));
+		g1.drawString("Press Escape to Exit", 150, 500);
 		g1.dispose();
 		bs.show();
 			

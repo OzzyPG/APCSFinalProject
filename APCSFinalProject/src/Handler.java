@@ -89,10 +89,14 @@ public class Handler {
 		colors.add(Color.blue);
 		colors.add(Color.magenta);
 		colors.add(Color.yellow);
+                colors.add(Color.BLACK);
+                colors.add(Color.GREEN);
+                colors.add(Color.ORANGE);
+                colors.add(Color.WHITE);
 
 
 		for (int c = 1; c<= Game.players; c++) {
-		this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, c, colors.get(c - 1), true)); // creates the player
+		this.addObject(new Player(450, (int) Math.floor(Math.random() * (599 - 1)), false, c, colors.get(c - 1), true)); // creates the player
 
 		}
 		//this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, 2, Color.BLUE)); // creates the player
@@ -108,7 +112,7 @@ public class Handler {
 	
 	public void wave(int f) {
 		for (int i = 0; i <= f; i++) {
-			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (600 - 1)), true, 0, Color.red)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
+			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (600 - 1) + 10), true, 0, Color.red)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
 		}
 	}
 	
