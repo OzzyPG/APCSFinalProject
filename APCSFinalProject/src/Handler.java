@@ -26,7 +26,12 @@ public class Handler {
 		}
 	}
 	
-	
+	/*
+	 * dead method
+	 * checks if every player is dead or not
+	 * if every player is dead then the game ends
+	 * Nathaniel
+	 */
 	public void dead() {
 		int players = -1;
 
@@ -44,6 +49,11 @@ public class Handler {
 		}
 	}
 	
+	/*
+	 * Collision method
+	 * checks if the player object has touched the enemy object
+	 * Nathaniel
+	 */
 	public void collision() {
 		if (state == false) {
 			return;
@@ -89,17 +99,17 @@ public class Handler {
 		colors.add(Color.blue);
 		colors.add(Color.magenta);
 		colors.add(Color.yellow);
-                colors.add(Color.BLACK);
-                colors.add(Color.GREEN);
-                colors.add(Color.ORANGE);
-                colors.add(Color.WHITE);
+        colors.add(Color.BLACK);
+        colors.add(Color.GREEN);
+        colors.add(Color.ORANGE);
+        colors.add(Color.WHITE);
 
 
 		for (int c = 1; c<= Game.players; c++) {
 		this.addObject(new Player(450, (int) Math.floor(Math.random() * (599 - 1)), false, c, colors.get(c - 1), true)); // creates the player
 
 		}
-		//this.addObject(new Player(350, (int) Math.floor(Math.random() * (599 - 1)), false, 2, Color.BLUE)); // creates the player
+		
 
 			
 		for (int i = 0; i <= 25; i++) {
@@ -110,13 +120,22 @@ public class Handler {
 		Score.score = 0;
 	}
 	
+	/*
+	 * wave method
+	 * spawns the given amount of objects
+	 * Nathaniel
+	 */
 	public void wave(int f) {
 		for (int i = 0; i <= f; i++) {
-			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (600 - 1) + 10), true, 0, Color.red)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
+			this.addObject(new Enemy(0, (int) Math.floor(Math.random() * (600 - 1) - 10), true, 0, Color.red)); // creates the wall of enemies - 25 in this version, might up it if the game is too easy.
 		}
 	}
 	
-	
+	/*
+	 * render method
+	 * renders the object
+	 * Nathaniel
+	 */
 	public void render(Graphics g) {
 		for (int i = 0; i < objects.size(); i++) {
 			GameObject temp = objects.get(i);
@@ -125,10 +144,19 @@ public class Handler {
 		}
 		
 	}
+	/*
+	 * getState method
+	 * returns the state
+	 * Minh
+	 */
 	public boolean getState() {
 		return state;
 	}
-	
+	/*
+	 * addObject method
+	 * adds object to the array
+	 * Minh
+	 */
 	public void addObject(GameObject o) {
 		this.objects.add(o);
 	}

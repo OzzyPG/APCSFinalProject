@@ -1,4 +1,11 @@
 import java.awt.Color;//imports java color from Abstract Window Toolkit (Sameer Nasir)
+
+
+
+
+//// this whole file is sameer 
+
+
 import java.awt.Font;
 import java.awt.Graphics;//imports java graphics from Abstract Window Toolkit (Sameer Nasir)
 
@@ -17,11 +24,11 @@ public class Score {//creates a public class named Score (Sameer Nasir)
 	
 	
 	if (score == 880) {
-		handler.wave(25);
+		handler.wave(15);
 	}
 	
 	if (score == 3315) { 
-		handler.wave(30);
+		handler.wave(20);
 	}
 	}
 	

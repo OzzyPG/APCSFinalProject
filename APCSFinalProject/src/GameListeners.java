@@ -4,7 +4,12 @@ import java.awt.event.KeyEvent;
 public class GameListeners extends KeyAdapter {
 	
 	
+	
+	///// This whole file is minh
+
+	
 	private Handler handler;
+	private Enemy enemy;
 	
 	public GameListeners(Handler handler) {
 		this.handler = handler;
@@ -18,7 +23,8 @@ public class GameListeners extends KeyAdapter {
 	 * each button performs a certain action
 	 * (Minh Truong)
 	 */
-	public void keyPressed(KeyEvent e) {
+	
+		public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_1) {
 			Game.players = 1;
 			handler.restart();
@@ -137,7 +143,8 @@ public class GameListeners extends KeyAdapter {
                                             System.exit(1);
                                         }       
                                         if (e.getKeyCode() == KeyEvent.VK_C) {
-                                            vel = 3;
+                                            
+                                            
                                         }       break;
                                     }
                                 case 2:

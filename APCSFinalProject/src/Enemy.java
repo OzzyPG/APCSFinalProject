@@ -13,12 +13,14 @@ public class Enemy extends GameObject{//creates a public class that makes the su
 	public void tick() {//creates a new class named tick that does not return anything (Sameer Nasir)
 		x += speedX;//x is speedX + x (Sameer Nasir)
 		y += speedY;//y is speedY + y (Sameer Nasir)
+		
 		if (x >= 800) {//if x is greater than or equal to 800 than it will run (Sameer Nasir)
 			x = 0;//x is set to 0 (Sameer Nasir)
-			y = (int) Math.floor(Math.random() * (599 - 1));//the y value is random from 1- 600 (Sameer Nasir)
+			y = (int) Math.floor(Math.random() * (599 - 1) - 5);//the y value is random from 1- 600 (Sameer Nasir)
 		}
 		
 	}
+	
 	
 	
 	public Rectangle collide() {//if the rectangle collides (Sameer Nasir)
@@ -32,6 +34,8 @@ public class Enemy extends GameObject{//creates a public class that makes the su
 		g.fillRect(x, y, 25, 25);//g is filled with the color (Sameer Nasir)
 		
 	}
+
+	
 	
 
 }

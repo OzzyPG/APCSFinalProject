@@ -5,6 +5,12 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 
+
+
+
+//////// Nathaniel 
+
+
 public class Game extends Canvas implements Runnable{
 	/**
 	 * 
@@ -126,6 +132,10 @@ public class Game extends Canvas implements Runnable{
 		
 		 }
 	}
+	
+	/**
+	 * Handles each tick - Updates and checks for collision for each object. Also updates score
+	 */
 	private void tick() {
 		handler.tick();
 		handler.collision();
@@ -135,6 +145,9 @@ public class Game extends Canvas implements Runnable{
 	    }
 	}
 	
+	
+	
+	//renders graphics on the screen each tick
 	
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
@@ -146,6 +159,15 @@ public class Game extends Canvas implements Runnable{
 		Graphics g = bs.getDrawGraphics();
 		
 		if (startScr) {
+			
+			
+			
+			
+			
+			
+			
+			
+			//////// Minh
 			Graphics g4 = bs.getDrawGraphics();
 			g4.setColor(Color.pink);
 			g4.fillRect(0, 0, w, h);
@@ -154,17 +176,17 @@ public class Game extends Canvas implements Runnable{
 			g4.setColor(Color.white);
 			g4.setFont(new Font("arial",Font.BOLD,20));
 		
-			g4.drawString("Press a number 1-8 for the number of players", 150, 200);
+			g4.drawString("Press a number 1-8 for the number of players to start", 150, 200);
 			
-                        g4.setFont(new Font("Georgia", Font.BOLD, 20));
+            g4.setFont(new Font("Georgia", Font.BOLD, 20));
 			g4.drawString("1: Cyan: Use Arrow Keys to move", 150, 230);
-                        g4.drawString("2: Blue: Use WASD Keys to move", 150, 260);
-                        g4.drawString("3: Magenta: Use NUMPAD 5 2 1 3 Keys to move", 150, 290);
-                        g4.drawString("4: Yellow: Use I J K L to move", 150, 320);
-                        g4.drawString("5: Black: Use T F G H to move", 150, 350);
-                        g4.drawString("6: Green: Use HOME DELETE END PAGEDOWN to move", 150, 380);
-                        g4.drawString("7: Orange: Use Zero O P LEFT BRACKET to move", 150, 410);
-                        g4.drawString("8: White: Use NUMPAD DIVIDE 7 8 9 to move", 150, 440);
+            g4.drawString("2: Blue: Use WASD Keys to move", 150, 260);
+            g4.drawString("3: Magenta: Use NUMPAD 5 2 1 3 Keys to move", 150, 290);
+            g4.drawString("4: Yellow: Use I J K L to move", 150, 320);
+            g4.drawString("5: Black: Use T F G H to move", 150, 350);
+            g4.drawString("6: Green: Use HOME DELETE END PAGEDOWN to move", 150, 380);
+            g4.drawString("7: Orange: Use Zero O P LEFT BRACKET to move", 150, 410);
+            g4.drawString("8: White: Use NUMPAD DIVIDE 7 8 9 to move", 150, 440);
 
 			
 			g4.dispose();
@@ -177,50 +199,65 @@ public class Game extends Canvas implements Runnable{
 		
 		else if (handler.getState() != false) {
 		
-
-		g.setColor(Color.pink);
-		g.fillRect(0, 0, w, h);
-		handler.render(g);
-		score.render(g);
-		g.dispose();
-		bs.show();
+		
+			g.setColor(Color.pink);
+			g.fillRect(0, 0, w, h);
+			handler.render(g);
+			score.render(g);
+			g.dispose();
+			bs.show();
 		}
 		
 		else {
-		g.setColor(Color.pink);
-		g.fillRect(0, 0, w, h);
-		g.dispose();
-		
-		Graphics g1 = bs.getDrawGraphics();
-
-		
-		
-		g1.setColor(Color.white);
-		g1.setFont(new Font("arial",Font.BOLD,20));
-                
-                g1.drawString("Game Over", 150, 120);
-		g1.drawString("Score " + handler.finalScore, 150, 155);
-     	
-                g1.setFont(new Font("Georgia", Font.BOLD, 20));
-                g1.drawString("Press a number 1-8 for the number of players", 150, 200);
-
-                g1.drawString("1: Cyan: Use Arrow Keys to move", 150, 230);
-                g1.drawString("2: Blue: Use WASD Keys to move", 150, 260);
-                g1.drawString("3: Magenta: Use NUMPAD 5 1 2 3 Keys to move", 150, 290);
-                g1.drawString("4: Yellow: Use I J K L to move", 150, 320);
-                g1.drawString("5: Black: Use T F G H to move", 150, 350);
-                g1.drawString("6: Green: Use HOME DELETE END PAGEDOWN to move", 150, 380);
-                g1.drawString("7: Orange: Use Zero O P LEFT BRACKET to move", 150, 410);
-                g1.drawString("8: White: Use NUMPAD DIVIDE 7 8 9 to move", 150, 440);
-                
-                g1.setFont(new Font("arial",Font.BOLD,20));
-		g1.drawString("Press Escape to Exit", 150, 500);
-		g1.dispose();
-		bs.show();
+			g.setColor(Color.pink);
+			g.fillRect(0, 0, w, h);
+			g.dispose();
+			
+			Graphics g1 = bs.getDrawGraphics();
+	
+			
+			
+			g1.setColor(Color.white);
+			g1.setFont(new Font("arial",Font.BOLD,20));
+	                
+	                g1.drawString("Game Over", 150, 120);
+			g1.drawString("Score " + handler.finalScore, 150, 155);
+	
+	        g1.setFont(new Font("Georgia", Font.BOLD, 20));
+	        g1.drawString("Press a number 1-8 for the number of players to start", 150, 200);
+	
+	        g1.drawString("1: Cyan: Use Arrow Keys to move", 150, 230);
+	        g1.drawString("2: Blue: Use WASD Keys to move", 150, 260);
+	        g1.drawString("3: Magenta: Use NUMPAD 5 1 2 3 Keys to move", 150, 290);
+	        g1.drawString("4: Yellow: Use I J K L to move", 150, 320);
+	        g1.drawString("5: Black: Use T F G H to move", 150, 350);
+	        g1.drawString("6: Green: Use HOME DELETE END PAGEDOWN to move", 150, 380);
+	        g1.drawString("7: Orange: Use Zero O P LEFT BRACKET to move", 150, 410);
+	        g1.drawString("8: White: Use NUMPAD DIVIDE 7 8 9 to move", 150, 440);
+	        
+	        g1.setFont(new Font("arial",Font.BOLD,20));
+			g1.drawString("Press Escape to Exit", 150, 500);
+			g1.dispose();
+			bs.show();
 			
 		}
 		
 	}
+	
+	
+	
+	
+	
+	/////// Sameer + nathaniel
+	
+	
+	/**
+	 * MAkes it so that the player cannot go out of bounds
+	 * @param v position
+	 * @param max wall y
+	 * @param min wall x
+	 * @return new position
+	 */
 	
 	public static int wall (int v, int max, int min) {
 		if (v >= max) {
