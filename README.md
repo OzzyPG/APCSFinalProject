@@ -10,6 +10,8 @@ A Final Project for the APCS Course
 
 Nathaniel Miller-Robbins 
 
+Minh Truong 
+
 Sameer Nasir 
 
-Minh Truong 
+
