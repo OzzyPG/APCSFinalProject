@@ -1,4 +1,15 @@
 import java.awt.Color;//imports java colors from Abstract Window Toolkit (Sameer Nasir)
+
+
+
+
+
+////// This whole file is sameer, with help on the render and collide methods 
+
+
+
+
+
 import java.awt.Graphics;//imports java graphics from Abstract Window Toolkit (Sameer Nasir)
 import java.awt.Rectangle;//imports java rectangle from Abstract Window Toolkit (Sameer Nasir)
 
