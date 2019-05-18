@@ -11,6 +11,10 @@ public class Handler {
 	
 	int req = 0;
 	
+	// music stuff
+	static File musicPath = new File("Megolovania.wav");
+	static File musicEgg = new File("Egg.wav");
+	
 	ArrayList<Color> colors = new ArrayList<Color>();	
 	
 	//updates and renders every game object, every tick.
@@ -159,6 +163,39 @@ public class Handler {
 	 */
 	public void addObject(GameObject o) {
 		this.objects.add(o);
+	}
+	
+	/* This method handles the music of the game
+	* Nathaniel
+	*
+	*/
+	public static void song(boolean egg) {
+		try {
+			if (egg) { // for an easter egg I may or may not add 
+				   AudioInputStream eggS = AudioSystem.getAudioInputStream(musicEgg); // allows audio
+					Clip clip1 = AudioSystem.getClip();
+
+					clip1.open(eggS);
+					clip1.start();
+					clip1.loop(Clip.LOOP_CONTINUOUSLY);
+
+				}
+			else {
+			AudioInputStream a = AudioSystem.getAudioInputStream(musicPath); // also allows audio
+			Clip clip = AudioSystem.getClip();
+
+
+			clip.open(a); // starts audio
+			clip.start();
+			clip.loop(Clip.LOOP_CONTINUOUSLY); // loops audio
+			}
+			
+			
+		}
+		catch (Exception e) {
+			System.out.print("Music broke");
+			e.printStackTrace();
+		}
 	}
 
 }
