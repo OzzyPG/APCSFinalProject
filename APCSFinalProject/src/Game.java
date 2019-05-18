@@ -52,6 +52,7 @@ public class Game extends Canvas implements Runnable{
 		this.addKeyListener(new GameListeners(handler)); // allows the program to read key inputs
 		
 		handler.load();
+		Handler.song(falase);
 		
 
 		
